@@ -1,5 +1,5 @@
 import { useQuizStore } from "./quizStore";
-import type { QuizProps } from "../quiz-type";
+import type { QuizProps } from "./quiz-type";
 
 const Quiz = ({ quiz }: { quiz: QuizProps }) => {
   const { selectedAns, handleAnswer, handleAnswerWithDelay, quizIndex, score } =

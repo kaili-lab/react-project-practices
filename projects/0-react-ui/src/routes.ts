@@ -1,8 +1,19 @@
 import type { RouteLink } from ".";
+import Profile from "./pages/0-vanilla-css/1-profile/profile";
 import QuizHome from "./pages/1-quize/quiz-home";
 import ColorPalette from "./pages/2-color-pallete/color-pallete";
 import DragDropPage from "./pages/3-drag-drop/kanban-home";
 import ExpenseTracker from "./pages/4-expense-tracker/expense-tracker";
+import BookmarkSaver from "./pages/5-bookmark-saver/bookmark-saver";
+
+export const simplePageRoutes: RouteLink[] = [
+  {
+    path: "/simple/1-profile",
+    name: "Simple Profile",
+    component: Profile,
+    description: "A simple profile page",
+  },
+];
 
 // Define your practice pages
 export const practicePages: RouteLink[] = [
@@ -29,5 +40,11 @@ export const practicePages: RouteLink[] = [
     name: "Expense Tracker",
     component: ExpenseTracker,
     description: "Track your every expense",
+  },
+  {
+    path: "/5-bookmark-saver",
+    name: "Bookmark Saver",
+    component: BookmarkSaver,
+    description: "Save your bookmarks",
   },
 ];

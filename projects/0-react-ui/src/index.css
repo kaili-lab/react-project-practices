@@ -1,57 +1,66 @@
 @import "tailwindcss";
 
-/* Custom scrollbar styles */
-.custom-scrollbar::-webkit-scrollbar {
-  width: 8px; /* Sets the width of the entire scrollbar track */
+/* 颜色变量：可以保留在 base layer 里 */
+@layer base {
+  :root {
+    color-scheme: light dark;
+    --sb-track: transparent;
+    --sb-thumb: rgb(148 163 184); /* slate-400 */
+    --sb-thumb-hover: rgb(100 116 139); /* slate-500 */
+    --sb-thumb-active: rgb(71 85 105); /* slate-600 */
+  }
+
+  .dark {
+    --sb-track: transparent;
+    --sb-thumb: rgb(71 85 105); /* slate-600 */
+    --sb-thumb-hover: rgb(51 65 85); /* slate-700 */
+    --sb-thumb-active: rgb(30 41 59); /* slate-800 */
+  }
 }
 
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Background color of the scrollbar track (the "rail") */
-  border-radius: 4px; /* Rounds the corners of the track */
+/* Firefox 标准属性（放全局，简单直接） */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--sb-thumb) var(--sb-track);
 }
 
-/* 滚动条滑块 */
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #888; /* Color of the draggable scroll handle */
-  border-radius: 4px; /* Rounds the corners of the thumb */
+/* 内部滚动容器专用的自定义滚动条样式 */
+.scrollbar-custom {
+  /* 建议在组件里用 Tailwind: overflow-auto / overflow-y-scroll 配合固定高度 */
 }
 
-/* 滚动条滑块悬停时，设置一个较深的颜色 */
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #555;
+.scrollbar-custom::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
 }
 
-/* 隐藏滚动条上下两个按钮 */
-.custom-scrollbar::-webkit-scrollbar-button {
+.scrollbar-custom::-webkit-scrollbar-button {
   display: none;
+  width: 0;
+  height: 0;
 }
-/* 
-another way to hide the scrollbar arrows, add scrollbar-thin class to the container
-@layer utilities {
-  .scrollbar-hide-arrows::-webkit-scrollbar-button {
-    display: none;
-  }
-  
-  .scrollbar-thin::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-  }
-  
-  .scrollbar-thin::-webkit-scrollbar-track {
-    @apply bg-gray-100 rounded;
-  }
-  
-  .scrollbar-thin::-webkit-scrollbar-thumb {
-    @apply bg-gray-400 rounded hover:bg-gray-500;
-  }
-} */
 
-@layer utilities {
-  .scrollbar-minimal::-webkit-scrollbar {
-    width: 8px; /* Makes it thinner than default */
-  }
+.scrollbar-custom::-webkit-scrollbar-track {
+  background: var(--sb-track);
+}
 
-  .scrollbar-minimal::-webkit-scrollbar-button {
-    display: none; /* Removes arrows */
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background-color: var(--sb-thumb);
+  border-radius: 8px;
+  border: 3px solid var(--sb-track);
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:hover {
+  background-color: var(--sb-thumb-hover);
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb:active {
+  background-color: var(--sb-thumb-active);
+}
+
+/* 保持你的工具类 */
+@layer utilities {
+  .scrollbar-stable {
+    scrollbar-gutter: stable;
   }
 }

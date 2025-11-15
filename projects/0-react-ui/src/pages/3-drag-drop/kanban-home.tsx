@@ -6,7 +6,7 @@ import KanbanNewPage from "./optimization/kanban-optimize";
 
 const DragDropPage = () => {
   return (
-    <div className="bg-blue-50 h-screen flex flex-col gap-4 justify-center items-center">
+    <div className="bg-blue-50  flex flex-col gap-4 justify-center items-center w-full">
       <KanbanPage />
       <KanbanDndkit />
       <KanbanNewPage />

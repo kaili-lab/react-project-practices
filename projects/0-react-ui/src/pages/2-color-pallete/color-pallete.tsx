@@ -43,7 +43,7 @@ function ColorPalette() {
 
   return (
     // background
-    <div className="h-screen bg-gradient-to-br from-blue-400 via-blue-300 to-blue-200 flex justify-center items-center">
+    <div className="flex-1 bg-gradient-to-br from-blue-400 via-blue-300 to-blue-200 flex justify-center items-center">
       {/* container */}
       <div className="max-w-[800px] w-full bg-white rounded-xl shadow-2xl p-6 space-y-4">
         <h1 className="text-center text-3xl font-bold mt-2 my-8 relative after:content-[''] after:absolute after:-bottom-3 after:left-1/2 after:-translate-x-1/2 after:w-3/7 after:h-[3px] after:bg-[#667eea] after:rounded-[2px]">

@@ -1,28 +1,27 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-// Import your practice page components (you'll create these)
 import HomePage from "./components/home.tsx";
-import Navbar from "./components/navbar.tsx";
-import { practicePages } from "./routes.ts";
+import { practicePages, simplePageRoutes } from "./routes.ts";
 import { Toaster } from "react-hot-toast";
+import RootLayout from "./root-layout.tsx";
 
 // Main App component
-const App: React.FC = () => {
+const App = () => {
+  const routes = practicePages.concat(simplePageRoutes);
   return (
     <>
       <Router>
-        <div className="App">
-          <Navbar />
+        <div>
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            {practicePages.map((page) => (
-              <Route
-                key={page.path}
-                path={page.path}
-                element={<page.component />}
-              />
-            ))}
+            <Route element={<RootLayout />}>
+              <Route path="/" element={<HomePage />} />
+              {routes.map((page) => (
+                <Route
+                  key={page.path}
+                  path={page.path}
+                  element={<page.component />}
+                />
+              ))}
+            </Route>
           </Routes>
         </div>
       </Router>

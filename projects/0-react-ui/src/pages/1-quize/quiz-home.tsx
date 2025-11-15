@@ -1,10 +1,8 @@
-import QuizPage from "./original/quize-page";
-import QuizePageZustand from "./zustand/quize-page";
+import QuizePageZustand from "./quize-page";
 
 const QuizHome = () => {
   return (
-    <div className="h-screen flex justify-center items-center flex-col gap-8">
-      <QuizPage />
+    <div className="flex justify-center items-center flex-col gap-8 w-full">
       <QuizePageZustand />
     </div>
   );

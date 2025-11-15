@@ -1,0 +1,139 @@
+.profile {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(185, 75%, 39%);
+  position: relative;
+  overflow: hidden;
+}
+
+.profile::before,
+.profile::after {
+  content: "";
+  position: absolute;
+  /* */
+  width: 700px;
+  height: 700px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.profile::before {
+  background-image: url("./bg-pattern-top.svg");
+  top: -450px;
+  left: -200px;
+}
+.profile::after {
+  background-image: url("./bg-pattern-bottom.svg");
+  bottom: -450px;
+  right: -200px;
+}
+
+.container {
+  width: 400px;
+  background-color: white;
+  padding: 30px;
+  padding-top: 0;
+  border-radius: 10px;
+  box-shadow: rgba(8, 70, 94, 0.25);
+  z-index: 1; /* 让内容盖在背景图上面 */
+}
+
+.headerImg {
+  margin-left: -30px;
+  margin-right: -30px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden; /* important so the <img> is clipped to the radius */
+}
+
+.headerImg img {
+  width: 100%;
+}
+
+.avatarContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+/* 外圈：白色圆环 */
+.avatarOuter {
+  width: 96px; /* 外圈直径，自己根据设计调 */
+  height: 96px;
+  border-radius: 50%; /* 变成圆形 */
+  background-color: #fff; /* 圆环的颜色 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 让它从背景图中“浮出来”的效果 */
+  margin-top: -48px; /* 往上压住 header 图，可以微调 */
+  border: 1px solid rgba(0, 0, 0, 0.05); /* 轻微描边，可选 */
+}
+
+/* 内圈：真正的头像区域 */
+.avatarInner {
+  width: 84px; /* 内圈直径，略小于外圈，形成环 */
+  height: 84px;
+  border-radius: 50%; /* 也是圆形 */
+  overflow: hidden; /* 裁剪掉 img 超出的部分 */
+}
+
+/* 图片本身填满内圈 */
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 保持比例，居中裁剪 */
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.info {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.name {
+  font-weight: bold;
+  color: hsl(218, 44%, 22%);
+}
+.nameNumber {
+  color: hsl(0, 0%, 59%);
+}
+.city {
+  color: hsl(0, 0%, 59%);
+  margin-top: 8px;
+}
+
+.divider {
+  height: 1px;
+  background-color: hsl(0, 0%, 90%);
+  margin-bottom: 20px;
+  margin-left: -30px;
+  margin-right: -30px;
+}
+
+.achive {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+.media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.mediaNumber {
+  font-size: 20px;
+  font-weight: bold;
+  color: hsl(218, 44%, 22%);
+}
+.mediaLabel {
+  color: hsl(0, 0%, 59%);
+  font-size: 12px;
+}

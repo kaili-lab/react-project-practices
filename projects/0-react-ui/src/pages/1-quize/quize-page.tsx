@@ -1,5 +1,5 @@
 import { useQuizStore } from "./quizStore";
-import { quizQuestions } from "../quiz-list";
+import { quizQuestions } from "./quiz-list";
 import Quiz from "./quiz";
 import QuizResult from "./quiz-result";
 
