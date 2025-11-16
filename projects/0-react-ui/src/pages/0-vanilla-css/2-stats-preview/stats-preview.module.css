@@ -1,0 +1,125 @@
+.bg {
+  background-color: hsl(233, 47%, 7%);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+/* 在 RootLayout 的 max-w-7xl 之内，容器就跟随它，自己不再设置更小的 max-width */
+.container {
+  display: flex;
+  max-width: 80%;
+  border-radius: 10px;
+  overflow: hidden; /* 关键 1：裁掉内部元素超出的部分，让圆角露出来 */
+}
+
+/* ====== 桌面 / 默认布局：左右两列 ====== */
+
+.content {
+  background-color: hsl(244, 38%, 16%);
+  width: 50%;
+  padding: 48px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+.title span {
+  color: hsl(277, 64%, 61%);
+}
+
+.text {
+  color: hsla(0, 0%, 100%, 0.6);
+  font-size: 14px;
+  margin-bottom: 50px;
+}
+
+.achive {
+  display: flex;
+  gap: 40px;
+  text-transform: uppercase;
+  justify-content: center;
+}
+
+.number {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.desc {
+  color: hsla(0, 0%, 100%, 0.6);
+  font-size: 12px;
+}
+
+/* 右侧图片区域 + 紫色遮罩 */
+.image {
+  position: relative;
+  width: 50%;
+  background-image: url("./image-header-desktop.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: hsl(277, 64%, 61%);
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+}
+
+/* ====== 断点 1：<= 760px，改为上下布局 ====== */
+@media (max-width: 760px) {
+  .bg {
+    align-items: flex-start;
+    padding: 24px 16px; /* 小屏留一点边距 */
+  }
+
+  .container {
+    flex-direction: column-reverse; /* 图片在上 or 下，看你需求，column 就是文本在上、图片在下 */
+    border-radius: 10px;
+    overflow: hidden; /* 关键 1：裁掉内部元素超出的部分 */
+  }
+
+  .content,
+  .image {
+    width: 100%; /* 从 50% 改为占满整行 */
+  }
+
+  .content {
+    padding: 24px 20px;
+    text-align: center;
+  }
+
+  .achive {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .image {
+    position: relative;
+    background-image: url("./image-header-mobile.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 340px;
+    overflow: hidden;
+  }
+
+  .image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: hsl(277, 64%, 61%);
+    mix-blend-mode: multiply;
+    opacity: 0.9;
+  }
+}

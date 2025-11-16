@@ -1,5 +1,6 @@
 import type { RouteLink } from ".";
 import Profile from "./pages/0-vanilla-css/1-profile/profile";
+import StatsPreview from "./pages/0-vanilla-css/2-stats-preview/stats-preview";
 import QuizHome from "./pages/1-quize/quiz-home";
 import ColorPalette from "./pages/2-color-pallete/color-pallete";
 import DragDropPage from "./pages/3-drag-drop/kanban-home";
@@ -12,6 +13,12 @@ export const simplePageRoutes: RouteLink[] = [
     name: "Simple Profile",
     component: Profile,
     description: "A simple profile page",
+  },
+  {
+    path: "/simple/2-stats",
+    name: "Stats Preview Card",
+    component: StatsPreview,
+    description: "A stats preview card component",
   },
 ];
 
