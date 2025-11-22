@@ -1,0 +1,100 @@
+.bg {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+}
+
+.card {
+  max-width: 300px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 20px;
+}
+
+.title {
+  font-size: 32px;
+  text-transform: uppercase;
+  color: white;
+  font-family: "Arial Narrow", "Helvetica Narrow", sans-serif;
+  font-stretch: condensed; /* 尝试使用紧缩版本 */
+}
+
+.desc {
+  font-size: 14px;
+}
+
+.btn {
+  padding: 10px 30px;
+  background-color: white;
+  border: none;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: hsla(0, 0%, 100%, 0.75);
+}
+
+.btn:active {
+  transform: translateY(3px);
+}
+
+.sedans {
+  background-color: hsl(31, 77%, 52%);
+  color: white;
+}
+
+.sedans button {
+  color: hsl(31, 77%, 52%);
+}
+
+.sedans p {
+  color: hsl(31, 57%, 88%);
+}
+
+.suvs {
+  background-color: hsl(184, 100%, 22%);
+  color: white;
+}
+
+.suvs button {
+  color: hsl(184, 100%, 22%);
+}
+
+.suvs p {
+  color: hsl(184, 100%, 92%);
+}
+
+.luxury {
+  background-color: hsl(179, 100%, 13%);
+  color: white;
+}
+
+.luxury button {
+  color: hsl(179, 100%, 13%);
+}
+
+.luxury p {
+  color: hsl(179, 80%, 83%);
+}
