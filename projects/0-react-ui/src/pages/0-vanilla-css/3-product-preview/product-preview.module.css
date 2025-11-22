@@ -1,0 +1,107 @@
+.bg {
+  background-color: hsl(30, 38%, 92%);
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: white;
+}
+
+.mobileImg {
+  display: block;
+}
+.desktopImg {
+  display: none;
+}
+
+.productImg {
+  width: 100%; /* 宽度占满父元素 */
+  height: 100%; /* 高度占满父元素 */
+  object-fit: cover; /* 关键属性 */
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 700px;
+    flex-direction: row;
+  }
+  .image {
+    flex: 1;
+  }
+  .desktopImg {
+    display: block;
+  }
+  .mobileImg {
+    display: none;
+  }
+}
+
+.product {
+  flex: 1;
+  padding: 30px;
+}
+
+.subTitle {
+  color: gray;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.desc {
+  color: gray;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.currentPrice {
+  color: hsl(158, 36%, 37%);
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.originalPrice {
+  color: gray;
+  text-decoration: line-through solid #999;
+}
+
+.cta {
+  width: 100%;
+  background-color: hsl(158, 36%, 37%);
+  color: white;
+  padding: 15px 0;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.cta:hover {
+  background-color: hsl(158, 48%, 43%);
+}
+
+.cta:active {
+  transform: translateY(3px);
+}

@@ -11,7 +11,7 @@ function RootLayout() {
       </div>
 
       {/* 页面主体内容区域 */}
-      <main className="max-w-7xl mx-auto w-full flex-1 flex">
+      <main className="max-w-7xl mx-auto w-full flex-1 flex ">
         <Outlet />
       </main>
     </div>
