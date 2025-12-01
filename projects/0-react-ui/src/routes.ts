@@ -1,13 +1,16 @@
 import type { RouteLink } from ".";
 import Profile from "./pages/0-vanilla-css/1-profile/profile";
 import StatsPreview from "./pages/0-vanilla-css/2-stats-preview/stats-preview";
-import ProductPreview from "./pages/0-vanilla-css/3-product-preview/product-preview";
 import ThreeColumns from "./pages/0-vanilla-css/4-three-columns/three-columns";
+import FourCard from "./pages/0-vanilla-css/5-four-card/four-card";
 import QuizHome from "./pages/1-quize/quiz-home";
 import ColorPalette from "./pages/2-color-pallete/color-pallete";
 import DragDropPage from "./pages/3-drag-drop/kanban-home";
 import ExpenseTracker from "./pages/4-expense-tracker/expense-tracker";
 import BookmarkSaver from "./pages/5-bookmark-saver/bookmark-saver";
+import ProductPreview from "./pages/0-vanilla-css/3-product-preview/product-preview";
+
+// Define your simple page routes
 
 export const simplePageRoutes: RouteLink[] = [
   {
@@ -33,6 +36,12 @@ export const simplePageRoutes: RouteLink[] = [
     name: "Three Column Layout",
     component: ThreeColumns,
     description: "A three column layout component",
+  },
+  {
+    path: "/simple/5-four-card",
+    name: "Four Card Features",
+    component: FourCard,
+    description: "A four card features component",
   },
 ];
 

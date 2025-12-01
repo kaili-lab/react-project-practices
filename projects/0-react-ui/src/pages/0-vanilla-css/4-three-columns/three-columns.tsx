@@ -1,7 +1,7 @@
 import styles from "./three-columns.module.css";
-import sedans from "./design/icon-sedans.svg";
-import suvs from "./design/icon-suvs.svg";
-import luxury from "./design/icon-luxury.svg";
+import sedans from "./icon-sedans.svg";
+import suvs from "./icon-suvs.svg";
+import luxury from "./icon-luxury.svg";
 
 const ThreeColumns = () => {
   return (
